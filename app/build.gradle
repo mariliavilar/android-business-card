@@ -31,12 +31,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    // [BINDING#1]
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     def room_version = "2.3.0"
-    def lifecycle_version = "2.2.0"
+    def lifecycle_version = "2.5.1"
     def activity_version = "1.2.3"
 
     implementation 'androidx.core:core-ktx:1.8.0'
@@ -55,6 +59,7 @@ dependencies {
 
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
